@@ -1,11 +1,15 @@
 # chatty-signalr
 
 
-for start running backend server
+# for start running backend server
 
+```
 dotnet run -p ./Chatty.Api/Chatty.Api.csproj
+```
 
 
-for start reactJS frontend
+# for start reactJS frontend
 
+```
 npm start
+```
