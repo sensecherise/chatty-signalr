@@ -4,6 +4,8 @@
 ## for start running backend server
 
 ```
+cd api
+
 dotnet run -p ./Chatty.Api/Chatty.Api.csproj
 ```
 
@@ -11,6 +13,8 @@ dotnet run -p ./Chatty.Api/Chatty.Api.csproj
 ## for start reactJS frontend
 
 ```
+cd client
+
 npm start
 ```
 
