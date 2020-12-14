@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Chatty.Api.Hubs;
+using Chatty.Api.Workers;
 
 namespace Chatty.Api
 {
@@ -29,6 +30,8 @@ namespace Chatty.Api
             services.AddControllers();
             services.AddSignalR();
 
+            services.AddHostedService<NotificationWorker>();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("ClientPermission", policy =>
@@ -39,6 +42,7 @@ namespace Chatty.Api
                         .AllowCredentials();
                 });
             });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

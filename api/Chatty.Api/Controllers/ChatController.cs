@@ -25,5 +25,12 @@ namespace Chatty.Api.Controllers
 
             await _chatHub.Clients.All.ReceiveMessage(message);
         }
+
+
+        public async Task SendNotification(ChatMessage message)
+        {
+            await _chatHub.Clients.All.ReceiveMessage(message);
+        }
+
     }
 }

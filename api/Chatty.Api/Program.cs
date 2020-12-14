@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Chatty.Api.Workers;
 
 namespace Chatty.Api
 {
@@ -20,7 +21,16 @@ namespace Chatty.Api
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
+                    // webBuilder.UseStartup<Startup>();
                     webBuilder.UseStartup<Startup>();
                 });
+
+        // public static IHostBuilder CreateHostServiceBuilder(string[] args) =>
+        //     Host.CreateDefaultBuilder(args)
+        //         .ConfigureServices((hostContext, services) =>
+        //         {
+        //             services.AddHostedService<Worker>();
+        //         });
+            
     }
 }
