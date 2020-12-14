@@ -9,7 +9,7 @@ namespace Chatty.Api.Hubs
     {
         public async Task SendMessage(ChatMessage message)
         {
-            await Clients.All.ReceiveMessage(message);
+            //await Clients.All.ReceiveMessage(message);
         }
     }
 }
