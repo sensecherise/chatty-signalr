@@ -1,0 +1,15 @@
+using System.Threading.Tasks;
+using Chatty.Api.Models;
+using Microsoft.AspNetCore.SignalR;
+using Chatty.Api.Hubs.Clients;
+
+namespace Chatty.Api.Hubs
+{
+    public class UserIdentityHub : ChatHub
+    {
+        public async Task InvokeMe()
+        {
+            
+        }
+    }
+}

@@ -16,9 +16,13 @@ namespace Chatty.Api.Workers
     public class NotificationWorker : BackgroundService
     {
         private readonly ILogger<NotificationWorker> _logger;
+        private readonly ILogger<WeatherForecastController> _loggerForeCast;
         private readonly IHubContext<ChatHub, IChatClient> _chatHub;
+        private readonly HubCallerContext _chatConnector;
 
-        public NotificationWorker(ILogger<NotificationWorker> logger, IHubContext<ChatHub, IChatClient> chatHub)
+        public NotificationWorker(ILogger<NotificationWorker> logger
+        //, ILogger<WeatherForecastController> loggerForeCast
+        , IHubContext<ChatHub, IChatClient> chatHub)
         {
             _logger = logger;
             _chatHub = chatHub;
@@ -30,6 +34,8 @@ namespace Chatty.Api.Workers
             {
                 _logger.LogInformation("Worker running at: {time}", DateTimeOffset.Now);
 
+                //WeatherForecastController forecast = new WeatherForecastController(_loggerForeCast);
+
                 ChatMessage chatMsg = new ChatMessage();
                 chatMsg.User = "System";
                 chatMsg.Message = "Worker running";
@@ -38,7 +44,7 @@ namespace Chatty.Api.Workers
 
                 chat.SendNotification(chatMsg);
 
-                await Task.Delay(2000, stoppingToken);
+                await Task.Delay(10000, stoppingToken);
             }
         }
     }

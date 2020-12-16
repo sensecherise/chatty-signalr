@@ -11,5 +11,7 @@ namespace Chatty.Api.Hubs
         {
             //await Clients.All.ReceiveMessage(message);
         }
+        public string GetConnectionId() => Context.ConnectionId;
+
     }
 }
